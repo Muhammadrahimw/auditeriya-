@@ -6,11 +6,9 @@ import "../swiperStyle/index.css";
 import {FreeMode} from "swiper/modules";
 import {useGetPostsQuery} from "../../redux/api/postApi";
 import {Link} from "react-router-dom";
-import {useState} from "react";
 
-const NewComp = () => {
-	let [page, setPage] = useState(1);
-	let {data, isLoading, error} = useGetPostsQuery(page);
+const DramaComp = () => {
+	let {data, isLoading, error} = useGetPostsQuery(2);
 	if (isLoading)
 		return (
 			<h1 className="ctr text-white text-[2.5em] mt-12">Yuklanmoqda...</h1>
@@ -18,9 +16,9 @@ const NewComp = () => {
 	if (error) return <div>Xatolik yuz berdi...</div>;
 
 	return (
-		<section className="w-[80%] mx-auto mt-[5em]">
+		<section className="w-[80%] mx-auto mt-[6em]">
 			<div className="flex items-center justify-between gap-4 mb-9">
-				<h2 className="text-[2em] text-white">Действие</h2>
+				<h2 className="text-[2em] text-white">Драма</h2>
 				<button className="w-[9em] h-10 rounded-full bg-[#EC8F32] text-white hover:text-black cursor-pointer text-base tr">
 					Смотреть все
 				</button>
@@ -32,7 +30,7 @@ const NewComp = () => {
 				modules={[FreeMode]}
 				className="mySwiper">
 				{data.results.map((value) =>
-					value.genre_ids.includes(28) ? (
+					value.genre_ids.includes(18) ? (
 						<SwiperSlide
 							key={value.id}
 							className="flex flex-col cursor-pointer">
@@ -61,4 +59,4 @@ const NewComp = () => {
 	);
 };
 
-export default NewComp;
+export default DramaComp;

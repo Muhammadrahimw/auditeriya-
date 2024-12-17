@@ -9,7 +9,7 @@ const LayoutComp = () => {
 
 	return (
 		<>
-			<header className="w-full py-12 bg-[#000000EB] backdrop-blur opacity-[92%] fixed top-0 tr max-xl:text-[0.9em] max-lg:text-[0.75em] max-[888px]:text-[0.65em] max-md:text-base max-[530px]:text-sm max-[420px]:text-xs max-[360px]:text-[0.65em]">
+			<header className="w-full py-12 bg-[#000000EB] backdrop-blur opacity-[92%] fixed top-0 tr max-xl:text-[0.9em] max-lg:text-[0.75em] max-[888px]:text-[0.65em] max-md:text-base max-[530px]:text-sm max-[420px]:text-xs max-[360px]:text-[0.65em] z-50">
 				<nav className="w-[80%] mx-auto flex items-center gap-4 justify-between max-[1111px]:gap-2">
 					<div className="w-[16.68em] max-xl:w-[15em] tr max-[360px]:text-[0.8em] tr">
 						<Link to={`/`}>
@@ -19,10 +19,10 @@ const LayoutComp = () => {
 					<div
 						className={`text-white font-medium flex items-center gap-[6em] justify-between tr max-[1400px]:gap-[3em] max-[1111px]:gap-8 max-md:fixed ${
 							nav ? `max-md:top-0` : `max-md:top-[-2000px]`
-						} max-md:left-0 max-md:flex-col max-md:w-screen max-md:h-screen max-md:justify-center max-md:bg-[#000000] max-md:backdrop-blur-3xl max-md:z-20 max-md:text-[2em] max-md:gap-6`}>
+						} max-md:left-0 max-md:flex-col max-md:w-screen max-md:h-screen max-md:justify-center max-md:bg-[#000000] max-md:backdrop-blur-3xl max-md:z-[100] max-md:text-[2em] max-md:gap-6`}>
 						<FaXmark
 							onClick={() => setNav(false)}
-							className="fixed hidden max-md:block top-6 right-9 z-50"
+							className="fixed hidden max-md:block top-6 right-9 z-[100]"
 						/>
 						<p className="cursor-pointer group">Как купить</p>
 						<p className="cursor-pointer group">F.A.Q</p>
