@@ -1,5 +1,3 @@
-import React from "react";
-
 const ShowcaseComp = () => {
 	return (
 		<div className="bg-[url(/src/assets/images/showcase.png)] bg-no-repeat bg-center bg-cover h-[44em] flex items-center max-xl:text-sm tr max-[1111px]:text-xs max-[930px]:text-[0.62em] max-md:text-base max-[570px]:text-xs max-[430px]:text-[0.6em] max-[360px]:text-[0.45em]">
