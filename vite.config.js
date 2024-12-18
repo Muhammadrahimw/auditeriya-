@@ -7,21 +7,10 @@ export default defineConfig({
 		host: "0.0.0.0",
 		proxy: {
 			"/api": {
-				target: "https://api.themoviedb.org/3/movie/popular",
+				target: process.env.VITE_API_URL,
 				changeOrigin: true,
-				rewrite: (path) => {
-					return (
-						path.replace(/^\/api/, "") +
-						"&api_key=490c442891195bd132fe581623b11454"
-					);
-				},
+				rewrite: (path) => path.replace(/^\/api/, ""),
 			},
-		},
-	},
-	define: {
-		"process.env": {
-			VITE_API_URL: process.env.VITE_API_URL,
-			VITE_API_KEY: process.env.VITE_API_KEY,
 		},
 	},
 });
