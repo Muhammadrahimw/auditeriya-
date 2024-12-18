@@ -1,11 +1,13 @@
 import React from "react";
 import {useGetPostsQuery} from "../../redux/api/postApi";
-import {useLocation} from "react-router-dom";
+import {useParams, useSearchParams} from "react-router-dom";
 
 const Movie = () => {
-	let location = useLocation();
+	let {id} = useParams();
+	let [searchParams] = useSearchParams();
+	let page = searchParams.get("page");
 
-	let {data, isLoading, error} = useGetPostsQuery(1);
+	let {data, isLoading, error} = useGetPostsQuery(page);
 	if (isLoading)
 		return (
 			<h1 className="ctr text-white text-[2.5em] mt-12">Yuklanmoqda...</h1>
@@ -13,10 +15,7 @@ const Movie = () => {
 	if (error) return <div>Xatolik yuz berdi...</div>;
 	let movieData = null;
 
-	data.results.map((value) =>
-		value.id == location.pathname.slice(1) ? (movieData = value) : ""
-	);
-	console.log(movieData);
+	data.results.map((value) => (value.id == id ? (movieData = value) : ""));
 
 	return (
 		<section className="w-[80%] mx-auto mt-[12em]">

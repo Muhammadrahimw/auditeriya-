@@ -8,8 +8,8 @@ import {useGetPostsQuery} from "../../redux/api/postApi";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
-const DramaComp = () => {
-	let [page, setPage] = useState(2);
+const AnimationComp = () => {
+	let [page, setPage] = useState(1);
 	let {data, isLoading, error} = useGetPostsQuery(page);
 	if (isLoading)
 		return (
@@ -20,7 +20,7 @@ const DramaComp = () => {
 	return (
 		<section className="w-[80%] mx-auto mt-[5em] max-md:text-[1.15em] tr max-[680px]:text-sm max-[520px]:text-xs max-[450px]:text-[0.65em] max-[375px]:text-[0.55em] max-[320px]:text-[0.45em]">
 			<div className="flex items-center justify-between gap-4 mb-9">
-				<h2 className="text-[2em] text-white">драма</h2>
+				<h2 className="text-[2em] text-white">анимация</h2>
 				<button className="w-[9em] h-10 rounded-full bg-[#EC8F32] text-white hover:text-black cursor-pointer text-base tr">
 					Смотреть все
 				</button>
@@ -74,7 +74,7 @@ const DramaComp = () => {
 				}}
 				className="mySwiper">
 				{data.results.map((value) =>
-					value.genre_ids.includes(18) ? (
+					value.genre_ids.includes(16) ? (
 						<SwiperSlide
 							key={value.id}
 							className="flex flex-col cursor-pointer">
@@ -103,4 +103,4 @@ const DramaComp = () => {
 	);
 };
 
-export default DramaComp;
+export default AnimationComp;
