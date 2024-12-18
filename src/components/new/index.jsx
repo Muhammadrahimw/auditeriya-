@@ -88,7 +88,7 @@ const NewComp = () => {
 									<p className="text-base text text-[#ADADAD] font-light mt-6 mb-2 ">
 										{value.overview.slice(0, 22)}...
 									</p>
-									<p className="font-medium text-xl text-white text-left">
+									<p className="text-xl font-medium text-left text-white">
 										{value.title.slice(0, 16)}
 									</p>
 								</div>

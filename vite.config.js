@@ -10,13 +10,18 @@ export default defineConfig({
 				target: "https://api.themoviedb.org/3/movie/popular",
 				changeOrigin: true,
 				rewrite: (path) => {
-					// API kalitini URLga qo'shish
 					return (
 						path.replace(/^\/api/, "") +
 						"&api_key=490c442891195bd132fe581623b11454"
 					);
 				},
 			},
+		},
+	},
+	define: {
+		"process.env": {
+			VITE_API_URL: process.env.VITE_API_URL,
+			VITE_API_KEY: process.env.VITE_API_KEY,
 		},
 	},
 });

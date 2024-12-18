@@ -32,31 +32,33 @@ const LayoutComp = () => {
 						<AiOutlineSearch className="text-4xl font-bold text-white cursor-pointer max-md:text-3xl" />
 						<FaBars
 							onClick={() => setNav(true)}
-							className="text-xl text-white hidden max-md:block"
+							className="hidden text-xl text-white max-md:block"
 						/>
 					</div>
 					<div className="flex items-center gap-5 max-md:hidden">
-						<button className="w-[10em] h-10 rounded-full border-2 border-white text-white font-semibold">
+						<button className="w-[10em] h-10 rounded-full border-2 border-white text-white font-semibold tr">
 							Регистрация
 						</button>
-						<button className="w-[6.5em] h-10 rounded-full bg-[#EC8F32] text-white font-medium">
-							Войти
-						</button>
+						<Link to={`/login`}>
+							<button className="w-[6.5em] h-10 rounded-full bg-[#EC8F32] text-white font-medium hover:text-black tr">
+								Войти
+							</button>
+						</Link>
 					</div>
 				</nav>
 			</header>
 			<Outlet />
 			<footer className="mt-[10em] max-[1111px]:text-sm tr max-[970px]:text-xs max-[870px]:text-[0.6em] max-md:text-base">
 				<div className="w-[80%] mx-auto">
-					<div className="border border-gray-600 w-full"></div>
+					<div className="w-full border border-gray-600"></div>
 					<div className="grid grid-cols-5 gap-4 mt-[3.5em] mb-[5em] max-md:grid-cols-2 max-md:text-xl tr max-md:gap-8 max-[550px]:text-base max-[450px]:text-2xl max-[450px]:grid-cols-1 max-[320px]:text-xl">
 						<div className="col-span-2 max-md:col-span-1">
 							<Link to={`/`}>
 								<img src="/src/assets/images/Group 16018.svg" alt="logo" />
 							</Link>
 						</div>
-						<div className="flex flex-col gap-3 justify-start">
-							<b className="text-xl text-white mb-1">Жанры</b>
+						<div className="flex flex-col justify-start gap-3">
+							<b className="mb-1 text-xl text-white">Жанры</b>
 							<a
 								href="#"
 								className="text-xs text-gray-500 underline underline-offset-2">
@@ -83,8 +85,8 @@ const LayoutComp = () => {
 								Все жанры
 							</a>
 						</div>
-						<div className="flex flex-col gap-3 justify-start">
-							<b className="text-xl text-white mb-1">Категории</b>
+						<div className="flex flex-col justify-start gap-3">
+							<b className="mb-1 text-xl text-white">Категории</b>
 							<a
 								href="#"
 								className="text-xs text-gray-500 underline underline-offset-2">
@@ -101,8 +103,8 @@ const LayoutComp = () => {
 								Выбор редакции
 							</a>
 						</div>
-						<div className="flex flex-col gap-3 justify-start">
-							<b className="text-xl text-white mb-1">Разделы</b>
+						<div className="flex flex-col justify-start gap-3">
+							<b className="mb-1 text-xl text-white">Разделы</b>
 							<a
 								href="#"
 								className="text-xs text-gray-500 underline underline-offset-2">
@@ -126,16 +128,16 @@ const LayoutComp = () => {
 						</div>
 					</div>
 				</div>
-				<div className="border border-gray-600 w-full"></div>
+				<div className="w-full border border-gray-600"></div>
 				<div className="my-12 w-[80%] mx-auto flex items-center justify-between gap-4 max-md:flex-wrap">
 					<div className="flex items-center gap-[4em] max-md:flex-wrap max-md:gap-8">
 						<p className="text-xs font-light text-gray-500">
 							© 2022, «Аудитерия». Все права защищены.
 						</p>
-						<a href="#" className="text-xs font-light underline text-gray-500">
+						<a href="#" className="text-xs font-light text-gray-500 underline">
 							Политика конфиденциальности
 						</a>
-						<a href="#" className="text-xs font-light underline text-gray-500">
+						<a href="#" className="text-xs font-light text-gray-500 underline">
 							Лицензионное соглашение
 						</a>
 					</div>
